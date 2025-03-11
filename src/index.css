@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans" , sans-serif;
+  overflow-x: hidden;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+.button{
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px; /* Corrected font size */
+  font-weight: 900;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff00ff, #ff6600);
+  color: white;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+}
+
+/* Button Hover Effect */
+
+
+/* Animated Glow Effect */
+@keyframes glowing {
+  0% { box-shadow: 0 0 5px #ff6600; }
+  50% { box-shadow: 0 0 20px #ff00ff; }
+  100% { box-shadow: 0 0 5px #ff6600; }
+}
+
+button:focus {
+  animation: glowing 1.5s infinite alternate;
+}
+
+
+.r {
+  text-align: center;
+  z-index: 0;
+  font-size: clamp(30px, 4vw, 100px);
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, rgb(37, 122, 219), cyan);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px red, 0 0 20px cyan, 0 0 30px cyan;
+  animation: textGlow 1.5s infinite alternate;
+  
+}
+
+
+.h1{
+  width: 100%;
+  align-items: center;
+}
+.all{
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 255, 13);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
