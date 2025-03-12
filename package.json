@@ -14,6 +14,7 @@
     "@splinetool/runtime": "^1.9.75",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-simple-typewriter": "^5.0.1",
     "spline": "^0.0.0"
   },
   "devDependencies": {

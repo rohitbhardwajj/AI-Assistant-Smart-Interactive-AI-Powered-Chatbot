@@ -1,60 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Nunito Sans" , sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   overflow-x: hidden;
 }
-html,body{
+
+html, body {
   height: 100%;
   width: 100%;
   background-color: black;
   color: white;
 }
-.button{
-  /* background-color: red; */
-  width: 100%;
+
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
- 
-}
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px; /* Corrected font size */
-  font-weight: 900;
-  cursor: pointer;
-  background: linear-gradient(45deg, #ff00ff, #ff6600);
-  color: white;
-  transition: all 0.3s ease-in-out;
+  height: 100vh;
   position: relative;
-  overflow: hidden;
-  margin-top: 30px;
 }
 
-/* Button Hover Effect */
-
-
-/* Animated Glow Effect */
-@keyframes glowing {
-  0% { box-shadow: 0 0 5px #ff6600; }
-  50% { box-shadow: 0 0 20px #ff00ff; }
-  100% { box-shadow: 0 0 5px #ff6600; }
-}
-
-button:focus {
-  animation: glowing 1.5s infinite alternate;
-}
-
-
-.r {
+.content {
   text-align: center;
-  z-index: 0;
+  z-index: 2;
+  position: relative;
+  /* background-color: firebrick; */
+  width: 70%;
+  margin-left: 20px;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
   font-size: clamp(30px, 4vw, 100px);
   font-weight: 900;
   text-transform: uppercase;
@@ -62,20 +44,69 @@ button:focus {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 0 10px red, 0 0 20px cyan, 0 0 30px cyan;
-  animation: textGlow 1.5s infinite alternate;
-  
+  /* animation: textGlow 1.5s infinite alternate; */
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 10px red, 0 0 20px cyan, 0 0 30px cyan;
+  }
+  100% {
+    text-shadow: 0 0 20px red, 0 0 40px cyan, 0 0 60px cyan;
+  }
+}
+
+.subtitle {
+  font-size: clamp(16px, 2vw, 24px);
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 10px;
+}
+
+.button-container {
+  margin-top: 2rem;
+}
+
+.glow-button {
+  padding: 12px 17px;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ff00ff, #ff6600);
+  color: white;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  animation: glowing 1.5s infinite alternate;
 }
 
 
-.h1{
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px #ff6600;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff00ff;
+  }
+  100% {
+    box-shadow: 0 0 5px #ff6600;
+  }
+}
+
+.spline-container {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  align-items: center;
-}
-.all{
   height: 100%;
-  width: 100%;
-  background-color: rgb(0, 255, 13);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (min-width:748px) {
+  .spline-container {
+    position: relative;
+  }
 }
