@@ -4,7 +4,7 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { DataContext } from "./Context/UserContext"; // Correct Import
 
 const App = () => {
-  // ✅ Use Context Correctly
+  // Use Context Correctly
   const { recognition, isLoading } = useContext(DataContext); // Added isLoading
 
   const [text] = useTypewriter({
