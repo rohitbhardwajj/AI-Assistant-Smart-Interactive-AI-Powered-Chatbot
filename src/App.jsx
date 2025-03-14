@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import Spline from "@splinetool/react-spline";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { DataContext } from "./Context/UserContext"; // Correct Import
+import { DataContext } from "./Context/UserContext"; 
 
 const App = () => {
-  // Use Context Correctly
-  const { recognition, isLoading } = useContext(DataContext); // Added isLoading
+  const { handleVoiceInteraction, stopAI, isLoading } = useContext(DataContext);
 
   const [text] = useTypewriter({
     words: ["Your Advanced AI Assistant", "a creation of Rohit Bhardwaj"],
@@ -24,20 +23,21 @@ const App = () => {
         </div>
         <div className="button-container">
           <button
-            onClick={() => recognition.start()}
+            onClick={handleVoiceInteraction}
             className="glow-button"
-            disabled={isLoading} // Disable button while loading
+            disabled={isLoading}
           >
-            {isLoading ? (
-              <div className="spinner"></div> // Show spinner when loading
-            ) : (
-              "Click Here"
-            )}
+            {isLoading ? <div className="spinner"></div> : "Start AI"}
+          </button>
+
+          <button
+            onClick={stopAI}
+            className="glow-button stop-button"
+          >
+            Stop AI
           </button>
         </div>
       </div>
-
-      {/* ✅ Spline Robot Added Back */}
       <div className="spline-container">
         <Spline scene="https://prod.spline.design/7r54cNUtHw3xgy8u/scene.splinecode" />
       </div>

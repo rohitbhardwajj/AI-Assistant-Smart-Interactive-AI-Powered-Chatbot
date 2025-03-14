@@ -40,7 +40,8 @@ html, body {
   font-weight: 900;
   height: 40vh;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 20px;
+  overflow: hidden;
   text-transform: uppercase;
   background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrtN2_niepWo_99TR-6Md_rtjyjSIAktW49g&s");
   background-size: cover;
@@ -63,6 +64,9 @@ html, body {
 
 .button-container {
   margin-top: 2rem;
+ /* background-color: #ff00ff; */
+ display: flex;
+ justify-content: space-evenly;
 }
 
 .glow-button {
