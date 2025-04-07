@@ -34,7 +34,7 @@ const App = () => {
             onClick={stopAI}
             className="glow-button stop-button"
           >
-            Stop AI
+            Stop Chitti
           </button>
         </div>
       </div>
