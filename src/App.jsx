@@ -27,7 +27,7 @@ const App = () => {
             className="glow-button"
             disabled={isLoading}
           >
-            {isLoading ? <div className="spinner"></div> : "Start AI"}
+            {isLoading ? <div className="spinner"></div> : "Start Chitti"}
           </button>
 
           <button
