@@ -1,7 +1,7 @@
 import React, { createContext, useState, useRef } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const API_KEY = "AIzaSyDWqj6QHM2u0EyaE_nVueWbOfPPQKYRUN8"; 
+const API_KEY = "AIzaSyC2_0dTUlrPb-D_RfzHyoxq3ECgAzBVdas"; 
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
