@@ -1,7 +1,8 @@
 import React, { createContext, useState, useRef } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const API_KEY = "AIzaSyC2_0dTUlrPb-D_RfzHyoxq3ECgAzBVdas"; 
+const API_KEY = import.meta.env.VITE_API_KEY;
+
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
@@ -46,17 +47,27 @@ const UserContext = ({ children }) => {
       speak(aiResponse);
     };
   }
+
   const getAIResponse = async (prompt) => {
     try {
       const result = await model.generateContent({
         contents: [{ role: "user", parts: [{ text: prompt }] }],
       });
-      return result.response.text();
+
+      let responseText = result.response.text();
+
+      // Clean unwanted characters and markdown formatting
+      responseText = responseText.replace(/[*_`~]/g, ""); 
+      // Optional: shorten response to first 2-3 sentences for short answer
+      responseText = responseText.split(/\. |\n/).slice(0, 3).join(". ") + ".";
+
+      return responseText;
     } catch (error) {
       console.error("Error fetching AI response:", error);
       return "Sorry, I couldn't process your request.";
     }
   };
+
   const handleVoiceInteraction = () => {
     speak("Hello, how can I help you?");
     setTimeout(() => {
@@ -65,6 +76,7 @@ const UserContext = ({ children }) => {
       }
     }, 2000);
   };
+
   const stopAI = () => {
     console.log("Stopping AI...");
     window.speechSynthesis.cancel();
